@@ -1,0 +1,809 @@
+{
+  "Shirak": {
+    "city": {
+      "Artik": {
+        "hy": "Արթիկ",
+        "ru": "Артик",
+        "en": "Artik"
+      },
+      "Gyumri": {
+        "hy": "Գյումրի",
+        "ru": "Гюмри",
+        "en": "Gyumri"
+      },
+      "3": {
+        "hy": "Մարալիկ",
+        "ru": "Маралик",
+        "en": "Maralik"
+      }
+    },
+    "village": {
+      "Azatan": {
+        "hy": "Ազատան",
+        "ru": "Азатан",
+        "en": "Azatan"
+      },
+      "Alvar": {
+        "hy": "Ալվար",
+        "ru": "Алвар",
+        "en": "Alvar"
+      },
+      "Akhurik": {
+        "hy": "Ախուրիկ",
+        "ru": "Ахурик",
+        "en": "Akhurik"
+      },
+      "Akhuryan": {
+        "hy": "Ախուրյան ",
+        "ru": "Ахурян",
+        "en": "Akhuryan "
+      },
+      "Akhuryan Railway Station Village": {
+        "hy": "Ախուրյան կայարանի գյուղ",
+        "ru": "Деревня Ахурян Кайарана",
+        "en": "Akhuryan Railway Station Village"
+      },
+      "Aghin": {
+        "hy": "Աղին ",
+        "ru": "Агин",
+        "en": "Aghin "
+      },
+      "Aghin Railway Station Village": {
+        "hy": "Աղին կայարանի գյուղ",
+        "ru": "Деревня Агин Кайарана",
+        "en": "Aghin Railway Station Village"
+      },
+      "Aghvorik": {
+        "hy": "Աղվորիկ",
+        "ru": "Ахворик",
+        "en": "Aghvorik"
+      },
+      "Amasia": {
+        "hy": "Ամասիա ",
+        "ru": "Амасия",
+        "en": "Amasia "
+      },
+      "Ayghabats": {
+        "hy": "Այգաբաց",
+        "ru": "Айгабац",
+        "en": "Ayghabats"
+      },
+      "Aniavan": {
+        "hy": "Անիավան",
+        "ru": "Аниаван",
+        "en": "Aniavan"
+      },
+      "Anipemza": {
+        "hy": "Անիպեմզա",
+        "ru": "Анипемза",
+        "en": "Anipemza"
+      },
+      "Anushavan": {
+        "hy": "Անուշավան ",
+        "ru": "Анушаван",
+        "en": "Anushavan "
+      },
+      "Ashotsk": {
+        "hy": "Աշոցք",
+        "ru": "Ашоцк",
+        "en": "Ashotsk"
+      },
+      "Arapi": {
+        "hy": "Առափի",
+        "ru": "Арапи",
+        "en": "Arapi"
+      },
+      "Aravet": {
+        "hy": "Արավետ",
+        "ru": "Аравет",
+        "en": "Aravet"
+      },
+      "Ardenis": {
+        "hy": "Արդենիս",
+        "ru": "Арденис",
+        "en": "Ardenis"
+      },
+      "Areknadem": {
+        "hy": "Արեգնադեմ",
+        "ru": "Арегнадем",
+        "en": "Aregnadem"
+      },
+      "Arevik": {
+        "hy": "Արևիկ ",
+        "ru": "Аревик",
+        "en": "Arevik "
+      },
+      "Arevshat": {
+        "hy": "Արևշատ ",
+        "ru": "Аревшат",
+        "en": "Arevshat "
+      },
+      "Arpeni": {
+        "hy": "Արփենի",
+        "ru": "Арпени",
+        "en": "Arpeni"
+      },
+      "Baghravan": {
+        "hy": "Բագրավան ",
+        "ru": "Баграван ",
+        "en": "Baghravan"
+      },
+      "Bayandur": {
+        "hy": "Բայանդուր",
+        "ru": "Баяндур",
+        "en": "Bayandur"
+      },
+      "Bandivan": {
+        "hy": "Բանդիվան",
+        "ru": "Бандиван",
+        "en": "Bandivan"
+      },
+      "Bashgyugh": {
+        "hy": "Բաշգյուղ",
+        "ru": "Башгюх",
+        "en": "Bashgyugh"
+      },
+      "Basen": {
+        "hy": "Բասեն ",
+        "ru": "Басен ",
+        "en": "Basen"
+      },
+      "Bavra": {
+        "hy": "Բավրա ",
+        "ru": "Бавра ",
+        "en": "Bavra"
+      },
+      "Bartsrashan": {
+        "hy": "Բարձրաշեն ",
+        "ru": "Барцрашен ",
+        "en": "Bartsrashan"
+      },
+      "Benyamin": {
+        "hy": "Բենիամին",
+        "ru": "Бениамин",
+        "en": "Benyamin"
+      },
+      "Berdashen": {
+        "hy": "Բերդաշեն ",
+        "ru": "Бердашен ",
+        "en": "Berdashen"
+      },
+      "Byurakn": {
+        "hy": "Բյուրակն ",
+        "ru": "Бюракн ",
+        "en": "Byurakn"
+      },
+      "Garnarich": {
+        "hy": "Գառնառիճ",
+        "ru": "Гарнарич",
+        "en": "Garnarich"
+      },
+      "33": {
+        "hy": "Գեղանիստ ",
+        "ru": "Геганист ",
+        "en": "Geghanist"
+      },
+      "Getap": {
+        "hy": "Գետափ ",
+        "ru": "Гетап ",
+        "en": "Getap "
+      },
+      "Getk": {
+        "hy": "Գետք",
+        "ru": "Гетк",
+        "en": "Getk"
+      },
+      "Goghovit": {
+        "hy": "Գոգհովիտ",
+        "ru": "Гогховит",
+        "en": "Goghovit"
+      },
+      "Gusanagyugh": {
+        "hy": "Գուսանագյուղ",
+        "ru": "Гусанагюх",
+        "en": "Gusanagyugh"
+      },
+      "Gtashen": {
+        "hy": "Գտաշեն",
+        "ru": "Гташен",
+        "en": "Gtashen"
+      },
+      "Darik": {
+        "hy": "Դարիկ",
+        "ru": "Дарик",
+        "en": "Darik"
+      },
+      "Yeghnajur": {
+        "hy": "Եղնաջուր",
+        "ru": "Ехнаджур",
+        "en": "Yeghnajur"
+      },
+      "Yerazgavors": {
+        "hy": "Երազգավորս",
+        "ru": "Еразгаворс",
+        "en": "Yerazgavors"
+      },
+      "Yerizak": {
+        "hy": "Երիզակ ",
+        "ru": "Еризак ",
+        "en": "Yerizak"
+      },
+      "Zarishat": {
+        "hy": "Զարիշատ ",
+        "ru": "Заришат ",
+        "en": "Zarishat"
+      },
+      "Zorakert": {
+        "hy": "Զորակերտ",
+        "ru": "Зоракерт",
+        "en": "Zorakert"
+      },
+      "Zuygahbyur": {
+        "hy": "Զույգաղբյուր",
+        "ru": "Зуйгагбюр",
+        "en": "Zuygahbyur"
+      },
+      "Tavshut": {
+        "hy": "Թավշուտ",
+        "ru": "Тавшут",
+        "en": "Tavshut"
+      },
+      "Torosgyugh": {
+        "hy": "Թորոսգյուղ",
+        "ru": "Торосгюх",
+        "en": "Torosgyugh"
+      },
+      "Isahakyan": {
+        "hy": "Իսահակյան ",
+        "ru": "Исахакян ",
+        "en": "Isahakyan"
+      },
+      "Lanjik": {
+        "hy": "Լանջիկ",
+        "ru": "Ланджик",
+        "en": "Lanjik"
+      },
+      "Lernagyugh": {
+        "hy": "Լեռնագյուղ",
+        "ru": "Лернагюх",
+        "en": "Lernagyugh"
+      },
+      "Lernakert": {
+        "hy": "Լեռնակերտ",
+        "ru": "Лернакерт",
+        "en": "Lernakert"
+      },
+      "Lernut": {
+        "hy": "Լեռնուտ",
+        "ru": "Лернут",
+        "en": "Lernut"
+      },
+      "Lorasar": {
+        "hy": "Լորասար",
+        "ru": "Лорасар",
+        "en": "Lorasar"
+      },
+      "Lusakert": {
+        "hy": "Լուսակերտ ",
+        "ru": "Лусакерт ",
+        "en": "Lusakert"
+      },
+      "Lusaghbyur": {
+        "hy": "Լուսաղբյուր ",
+        "ru": "Лусахбюр ",
+        "en": "Lusaghbyur"
+      },
+      "Tsaghkut": {
+        "hy": "Ծաղկուտ",
+        "ru": "Цахкут",
+        "en": "Tsaghkut"
+      },
+      "Kamkhut": {
+        "hy": "Կամխուտ",
+        "ru": "Камхут",
+        "en": "Kamkhut"
+      },
+      "Kamo": {
+        "hy": "Կամո ",
+        "ru": "Камо ",
+        "en": "Kamo"
+      },
+      "Kaps": {
+        "hy": "Կապս",
+        "ru": "Капс",
+        "en": "Kaps"
+      },
+      "Karnut": {
+        "hy": "Կառնուտ",
+        "ru": "Карнут",
+        "en": "Karnut"
+      },
+      "Karmravan": {
+        "hy": "Կարմրավան",
+        "ru": "Кармраван",
+        "en": "Karmravan"
+      },
+      "Karmrakar": {
+        "hy": "Կարմրաքար ",
+        "ru": "Кармракар ",
+        "en": "Karmrakar"
+      },
+      "Kakavasar": {
+        "hy": "Կաքավասար",
+        "ru": "Какавасар",
+        "en": "Kakavasar"
+      },
+      "Krashen": {
+        "hy": "Կրաշեն",
+        "ru": "Крашен",
+        "en": "Krashen"
+      },
+      "Krasar": {
+        "hy": "Կրասար",
+        "ru": "Красар",
+        "en": "Krasar"
+      },
+      "Haykadzor": {
+        "hy": "Հայկաձոր ",
+        "ru": "Айкадзор ",
+        "en": "Haykadzor"
+      },
+      "Haykasar": {
+        "hy": "Հայկասար",
+        "ru": "Айкасар",
+        "en": "Haykasar"
+      },
+      "Haykavan": {
+        "hy": "Հայկավան ",
+        "ru": "Айкаван ",
+        "en": "Haykavan"
+      },
+      "Hayrenyats": {
+        "hy": "Հայրենյաց",
+        "ru": "Айрениац",
+        "en": "Hayrenyats"
+      },
+      "Harich": {
+        "hy": "Հառիճ",
+        "ru": "Арич",
+        "en": "Harich"
+      },
+      "Hartashen": {
+        "hy": "Հարթաշեն ",
+        "ru": "Арташен ",
+        "en": "Hartashen"
+      },
+      "Hatsik": {
+        "hy": "Հացիկ ",
+        "ru": "Ацик ",
+        "en": "Hatsik"
+      },
+      "Hatsikavan": {
+        "hy": "Հացիկավան",
+        "ru": "Ацикаван",
+        "en": "Hatsikavan"
+      },
+      "Hoghmik": {
+        "hy": "Հողմիկ",
+        "ru": "Охмик",
+        "en": "Hoghmik"
+      },
+      "Horom": {
+        "hy": "Հոռոմ",
+        "ru": "Ором",
+        "en": "Horom"
+      },
+      "Horom Fortress": {
+        "hy": "Հոռոմի բերդ",
+        "ru": "Крепость Ором",
+        "en": "Horom Fortress"
+      },
+      "Hovit": {
+        "hy": "Հովիտ ",
+        "ru": "Овит ",
+        "en": "Hovit"
+      },
+      "Hovuni": {
+        "hy": "Հովունի",
+        "ru": "Овуни",
+        "en": "Hovuni"
+      },
+      "Hovtashen": {
+        "hy": "Հովտաշեն ",
+        "ru": "Овташен ",
+        "en": "Hovtashen"
+      },
+      "Hovtun": {
+        "hy": "Հովտուն",
+        "ru": "Овтун",
+        "en": "Hovtun"
+      },
+      "Dzithank": {
+        "hy": "Ձիթհանքով",
+        "ru": "Цитханк",
+        "en": "Dzithank"
+      },
+      "Dzorakap": {
+        "hy": "Ձորակապ",
+        "ru": "Цоракап",
+        "en": "Dzorakap"
+      },
+      "Dzorashen": {
+        "hy": "Ձորաշեն",
+        "ru": "Цорашен",
+        "en": "Dzorashen"
+      },
+      "Ghazanchi": {
+        "hy": "Ղազանչի ",
+        "ru": "Газанчи ",
+        "en": "Ghazanchi"
+      },
+      "Gharibjanyan": {
+        "hy": "Ղարիբջանյան",
+        "ru": "Гарибджанян ",
+        "en": "Gharibjanyan "
+      },
+      "Mayisyan": {
+        "hy": "Մայիսյան ",
+        "ru": "Майисян ",
+        "en": "Mayisyan"
+      },
+      "Marmashen": {
+        "hy": "Մարմաշեն ",
+        "ru": "Мармашен ",
+        "en": "Marmashen"
+      },
+      "Mets Mantash": {
+        "hy": "Մեծ Մանթաշ",
+        "ru": "Мец Манташ",
+        "en": "Mets Mantash"
+      },
+      "Mets Sariar": {
+        "hy": "Մեծ Սարիար",
+        "ru": "Мец Сарияр",
+        "en": "Mets Sariar"
+      },
+      "Mets Sepasar": {
+        "hy": "Մեծ Սեպասար",
+        "ru": "Мец Сепасар",
+        "en": "Mets Sepasar"
+      },
+      "Meghrashat": {
+        "hy": "Մեղրաշատ",
+        "ru": "Мехрашат",
+        "en": "Meghrashat"
+      },
+      "Meghrashen": {
+        "hy": "Մեղրաշեն",
+        "ru": "Мехрашен",
+        "en": "Meghrashen"
+      },
+      "Musayelyan": {
+        "hy": "Մուսայելյան ",
+        "ru": "Мусаелян ",
+        "en": "Musayelyan"
+      },
+      "Nahapetovan": {
+        "hy": "Նահապետավան",
+        "ru": "Нахапетован",
+        "en": "Nahapetovan"
+      },
+      "Nor Kyanq": {
+        "hy": "Նոր Կյանք ",
+        "ru": "Нор Кянк ",
+        "en": "Nor Kyanq"
+      },
+      "96": {
+        "hy": "Նորշեն ",
+        "ru": "Норшен ",
+        "en": "Norshen"
+      },
+      "Shaghik": {
+        "hy": "Շաղիկ",
+        "ru": "Шагик",
+        "en": "Shaghik"
+      },
+      "Shirak": {
+        "hy": "Շիրակ ",
+        "ru": "Ширак ",
+        "en": "Shirak "
+      },
+      "Shirakavan": {
+        "hy": "Շիրակավան",
+        "ru": "Ширакавана",
+        "en": "Shirakavan"
+      },
+      "Voghji": {
+        "hy": "Ողջի ",
+        "ru": "Оджи ",
+        "en": "Voghji"
+      },
+      "Voskehask": {
+        "hy": "Ոսկեհասկ",
+        "ru": "Оскехаск",
+        "en": "Voskehask"
+      },
+      "Pagakn": {
+        "hy": "Պաղակն",
+        "ru": "Пагакн",
+        "en": "Pagakn"
+      },
+      "Pemzashen": {
+        "hy": "Պեմզաշեն",
+        "ru": "Пемзашен",
+        "en": "Pemzashen"
+      },
+      "Jadjur": {
+        "hy": "Ջաջուռ",
+        "ru": "Джаджур",
+        "en": "Jadjur"
+      },
+      "Jadjuravan": {
+        "hy": "Ջաջուռավան",
+        "ru": "Джаджураван",
+        "en": "Jadjuravan"
+      },
+      "Jradzor": {
+        "hy": "Ջրաձոր",
+        "ru": "Джрадзор",
+        "en": "Jradzor"
+      },
+      "Jrarat": {
+        "hy": "Ջրառատ ",
+        "ru": "Джраррат ",
+        "en": "Jrarat"
+      },
+      "Jrapi": {
+        "hy": "Ջրափի",
+        "ru": "Джрапи",
+        "en": "Jrapi"
+      },
+      "Salut": {
+        "hy": "Սալուտ",
+        "ru": "Салют",
+        "en": "Salut"
+      },
+      "Sarnakhbyur": {
+        "hy": "Սառնաղբյուր ",
+        "ru": "Сарнахбюр ",
+        "en": "Sarnakhbyur"
+      },
+      "Saragyugh": {
+        "hy": "Սարագյուղ",
+        "ru": "Сарагюх",
+        "en": "Saragyugh"
+      },
+      "Saralanj": {
+        "hy": "Սարալանջ ",
+        "ru": "Сараланж ",
+        "en": "Saralanj"
+      },
+      "Sarakap": {
+        "hy": "Սարակապ",
+        "ru": "Саракап",
+        "en": "Sarakap"
+      },
+      "Sarapad": {
+        "hy": "Սարապատ",
+        "ru": "Сарапат",
+        "en": "Sarapad"
+      },
+      "Saratak": {
+        "hy": "Սարատակ ",
+        "ru": "Саратак ",
+        "en": "Saratak"
+      },
+      "Sizavet": {
+        "hy": "Սիզավետ",
+        "ru": "Сизавет",
+        "en": "Sizavet"
+      },
+      "Spandaryan": {
+        "hy": "Սպանդարյան ",
+        "ru": "Спандарян ",
+        "en": "Spandaryan"
+      },
+      "Vahramaberd": {
+        "hy": "Վահրամաբերդ",
+        "ru": "Вахрамаберт",
+        "en": "Vahramaberd"
+      },
+      "Vardagbyur": {
+        "hy": "Վարդաղբյուր",
+        "ru": "Вардагбюр",
+        "en": "Vardagbyur"
+      },
+      "Vardakar": {
+        "hy": "Վարդաքար",
+        "ru": "Вардаккар",
+        "en": "Vardakar"
+      },
+      "Tufashen": {
+        "hy": "Տուֆաշեն",
+        "ru": "Туфашен",
+        "en": "Tufashen"
+      },
+      "Tsohamarg": {
+        "hy": "Ցողամարգ",
+        "ru": "Цогамарг",
+        "en": "Tsohamarg"
+      },
+      "Panik": {
+        "hy": "Փանիկ",
+        "ru": "Паник",
+        "en": "Panik"
+      },
+      "Pokr Mantash": {
+        "hy": "Փոքր Մանթաշ",
+        "ru": "Покр Манташ",
+        "en": "Pokr Mantash"
+      },
+      "Pokr Sariar": {
+        "hy": "Փոքր Սարիար",
+        "ru": "Покр Сарияр",
+        "en": "Pokr Sariar"
+      },
+      "Pokr Sepasar": {
+        "hy": "Փոքր Սեպասար",
+        "ru": "Покр Сепасар",
+        "en": "Pokr Sepasar"
+      },
+      "Pokrashen": {
+        "hy": "Փոքրաշեն",
+        "ru": "Покрашен",
+        "en": "Pokrashen"
+      },
+      "Karaberd": {
+        "hy": "Քարաբերդ ",
+        "ru": "Караберд ",
+        "en": "Karaberd"
+      },
+      "Keti": {
+        "hy": "Քեթի ",
+        "ru": "Кети ",
+        "en": "Keti "
+      }
+    }
+  },
+  "Armavir": {
+    "city": {
+      "Armavir": {
+        "hy": "Արմավիր",
+        "ru": "Армавир ",
+        "en": "Armavir "
+      },
+      "Metsamor": {
+        "hy": "Մեծամոր",
+        "ru": "Мецамор",
+        "en": "Metsamor"
+      },
+      "Vagharshapat": {
+        "hy": "Վաղարշապատ",
+        "ru": "Вагаршапат",
+        "en": "Vagharshapat"
+      }
+    },
+    "village": {
+      "Alashkert": {
+        "hy": "Ալաշկերտ",
+        "ru": "Алашкерт",
+        "en": "Alashkert"
+      },
+      "Aknalich": {
+        "hy": "Ակնալիճ",
+        "ru": "Акналич",
+        "en": "Aknalich"
+      },
+      "Aknashen": {
+        "hy": "Ակնաշեն",
+        "ru": "Акнажен",
+        "en": "Aknashen"
+      },
+      "Aghavnatun": {
+        "hy": "Աղավնատուն",
+        "ru": "Агафнатун",
+        "en": "Aghavnatun"
+      },
+      "Amasia": {
+        "hy": "Ամասիա",
+        "ru": "Амасия",
+        "en": "Amasia"
+      },
+      "Amberd": {
+        "hy": "Ամբերդ",
+        "ru": "Амберд",
+        "en": "Amberd"
+      },
+      "Aygek": {
+        "hy": "Այգեկ",
+        "ru": "Айгек",
+        "en": "Aygek"
+      },
+      "Aygeshat": {
+        "hy": "Այգեշատ",
+        "ru": "Айгешат",
+        "en": "Aygeshat"
+      },
+      "Aygevan": {
+        "hy": "Այգեվան",
+        "ru": "Айгеван",
+        "en": "Aygevan"
+      },
+      "Apaga": {
+        "hy": "Ապագա",
+        "ru": "Апага",
+        "en": "Apaga"
+      },
+      "Aratashen": {
+        "hy": "Առատաշեն",
+        "ru": "Араташен",
+        "en": "Aratashen"
+      },
+      "Aragats": {
+        "hy": "Արագած",
+        "ru": "Арагац",
+        "en": "Aragats"
+      },
+      "Arazap": {
+        "hy": "Արազափ",
+        "ru": "Аразап",
+        "en": "Arazap"
+      },
+      "Araks": {
+        "hy": "Արաքս",
+        "ru": "Аракс",
+        "en": "Araks"
+      },
+      "Argavand": {
+        "hy": "Արգավանդ",
+        "ru": "Аргаванд",
+        "en": "Argavand"
+      },
+      "Argina": {
+        "hy": "Արգինա",
+        "ru": "Аргина",
+        "en": "Argina"
+      },
+      "Arevadasht": {
+        "hy": "Արևադաշտ",
+        "ru": "Аревадашн",
+        "en": "Arevadasht"
+      },
+      "Arevashat": {
+        "hy": "Արևաշատ",
+        "ru": "Аревашат",
+        "en": "Arevashat"
+      },
+      "Arevik": {
+        "hy": "Արևիկ",
+        "ru": "Аревик",
+        "en": "Arevik"
+      },
+      "Armavir": {
+        "hy": "Արմավիր գյուղ",
+        "ru": "Армавир",
+        "en": "Armavir"
+      },
+      "Arshaluis": {
+        "hy": "Արշալույս",
+        "ru": "Аршалуис",
+        "en": "Arshaluis"
+      },
+      "Artamet": {
+        "hy": "Արտամետ",
+        "ru": "Артамет",
+        "en": "Artamet"
+      },
+      "Artashar": {
+        "hy": "Արտաշար",
+        "ru": "Арташар",
+        "en": "Artashar"
+      },
+      "Artimet": {
+        "hy": "Արտիմետ",
+        "ru": "Артимет",
+        "en": "Artimet"
+      }
+    }
+  }
+}

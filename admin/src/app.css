@@ -1,0 +1,93 @@
+:root {
+  --my-green: #22e122;
+  --disabled-color: rgb(245 245 245 / 65%);
+  --black-light: #3e3e3e;
+  --border-color: rgb(190, 190, 190);
+  --btn-disabled: rgb(96 185 96);
+  --instruction-color:rgb(114, 114, 114);
+}
+
+*,
+html,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2rem 0;
+}
+
+.global-container {
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  min-width: 555px;
+  position: relative;
+}
+
+button:not(.editor-container *) {
+  cursor: pointer;
+  text-transform: capitalize;
+  margin: 15px 0;
+}
+
+select {
+  text-transform: capitalize;
+}
+
+label,
+select {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+:disabled {
+  background-color: var(--disabled-color);
+}
+.delete button {
+  border: 2px solid red !important;
+  color: red !important;
+}
+.delete button:hover::after {
+  background-color: red !important;
+}
+.bx--inline-notification__close-button {
+  height: auto !important;
+}

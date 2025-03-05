@@ -1,0 +1,19 @@
+.editor-container {
+    min-width: 300px;
+
+    button {
+        margin: 3px;
+    }
+
+    .clear {
+        margin: 15px 0;
+       text-align: right;
+        
+
+    }
+
+    .ql-editor {
+        max-height: 400px;
+        min-height: 100px;
+    }
+}

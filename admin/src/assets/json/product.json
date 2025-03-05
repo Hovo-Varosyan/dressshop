@@ -1,0 +1,24 @@
+{
+  "product": {
+    "title": "",
+    "material": "",
+    "category": "",
+    "mainImg": "",
+    "hoverImg": "",
+    "price": {
+      "value": 0,
+      "promition": 0,
+      "total": 0
+    },
+    "files": [],
+    "description": "",
+    "variant": [],
+    "size": []
+  },
+  "variant": {
+    "title": "",
+    "quantity": 0,
+    "file": {},
+    "size": []
+  }
+}

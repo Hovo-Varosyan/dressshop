@@ -1,0 +1,130 @@
+.product {
+    padding-right: 15px;
+    position: relative;
+
+    input:not([type="checkbox"]),
+    select {
+        width: 200px;
+    }
+
+    .variant {
+        margin-top: 15px;
+
+        .flex {
+            align-items: flex-end;
+        }
+
+        h4 {
+            margin: 50px 0 30px;
+        }
+    }
+
+    .table {
+        border: 1px solid var(--border-color);
+
+        .file--data {
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 15px;
+
+            span {
+                max-width: 350px;
+                word-wrap: break-word;
+            }
+
+            button {
+                margin-right: 15px;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 10px var(--border-color);
+            }
+        }
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .product_editor {
+        max-width: 890px;
+
+        min-width: 450px;
+
+        .product_p {
+            margin: 15px 0;
+        }
+    }
+
+    .product_data {
+        align-items: flex-end;
+        margin: 15px 0;
+
+        button {
+            margin: 5px 0;
+        }
+
+        .material {
+            display: inline-block;
+            width: 200px;
+        }
+
+    }
+
+    .price {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .totalprice {
+            text-align: center;
+        }
+    }
+
+    textarea {
+        width: 430px;
+        min-width: 250px;
+        height: 200px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    label {
+        span {
+            margin: 5px 0;
+            color: var(--instruction-color);
+        }
+    }
+
+    input,
+    label,
+    textarea {
+        display: block;
+    }
+
+    label,
+    p {
+        text-transform: capitalize;
+    }
+
+    input[type="checkbox"] {
+        margin: 0 5px;
+    }
+
+    padding-bottom: 25px;
+
+    .bx--accordion__title {
+        word-break: break-all;
+    }
+}

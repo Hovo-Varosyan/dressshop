@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@100..900&display=swap'); */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --black-text: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* .armenian {
+  font-family: "Noto Sans Armenian", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.my-container {
+  max-width: 2200px;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.h-max {
+  height: max-content;
+}
+
+*,
+html,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+pre,
+span,
+i,
+b {
+  text-wrap: wrap;
+  word-wrap: normal;
+}
+
+h1 {
+  font-size: 32px !important;
+}
+
+h2 {
+  font-size: 28px !important;
+}
+
+h3 {
+  font-size: 24px !important;
+}
+
+h4 {
+  font-size: 20px !important;
+}
+
+h5 {
+  font-size: 16px !important;
+}
+
+h6 {
+  font-size: 14px !important;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+
+}
+
+table {
+  text-transform: capitalize;
+}
+
+input [type="radio"],
+input[type="checkbox"] {
+  cursor: pointer !important;
+  margin-right: 6px;
+}
+
+.loading-icon {
+  animation: loading 2s infinite linear;
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg)
+    }
+
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+}
+
+select,
+option {
+  color: var(--black-text);
+  cursor: pointer;
+
+}
+
+option {
+  text-align: center;
+  padding: 10px;
+}
+
+option:nth-child(1) {
+  background-color: rgb(186, 186, 186);
+}

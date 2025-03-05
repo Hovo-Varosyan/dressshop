@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Dynalight&family=Great+Vibes&display=swap");
+
+.anim-text {
+  animation: text-show 1.5s linear forwards;
+}
+.mainslide {
+  width: 100%;
+  aspect-ratio: 16/9;
+  img{
+      height: 100%;
+  }
+}
+
+.swiperSlide {
+
+  .swiper-slide,
+  image-slider {
+      width: 17%;
+  }
+  
+
+  .product-container {
+      figure {
+          border-radius: 8px;
+          img {
+              height: 100%;
+          }
+      }
+
+  }
+}
+
+@keyframes text-show {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.great {
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ratio-3-4 {
+  aspect-ratio: 3/4;
+}
+
+.home-vintage {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  justify-content: center;
+
+  figure {
+    border: 3px solid gray;
+    flex-basis: 35%;
+  }
+}
+
+.about {
+
+  figure {
+    min-width: 30%;
+    border: 3px solid gray;
+
+    img {
+
+      height: 100%;
+    }
+  }
+}

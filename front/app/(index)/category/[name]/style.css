@@ -1,0 +1,16 @@
+.product-filter {
+    width: 17%;
+
+    p {
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .size>div {
+
+        border: 1px solid rgb(196, 196, 196);
+        min-width: 40px;
+        cursor: pointer;
+        padding: 0.50rem 0.75rem;
+    }
+}

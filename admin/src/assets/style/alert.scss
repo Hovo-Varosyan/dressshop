@@ -1,0 +1,23 @@
+.alert--container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    position: fixed;
+    bottom: 10%;
+    z-index: 1000;
+
+    .alert {
+
+        .bx--inline-notification__close-button {
+            height: auto;
+            min-height: auto;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        @media screen and (min-width: 650px) and (max-width: 780px) {
+            width: 70%;
+        }
+
+    }
+}

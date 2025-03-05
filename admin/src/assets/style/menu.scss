@@ -1,0 +1,85 @@
+@use "./scss/color.scss";
+
+.menu-container {
+    text-transform: capitalize;
+    max-width: 15%;
+    min-width: max-content;
+    min-height: 100vh;
+    position: static;
+    border-right: 1px solid color.$border-color;
+
+    .close {
+        text-align: right;
+
+        button {
+            text-transform: capitalize;
+            padding: 10px 15px;
+            font-size: 25px;
+            border: 1px solid color.$border-color;
+            background-color: transparent;
+            color: rgb(174, 174, 174);
+            border: none;
+            font-weight: 600;
+
+            &:hover {
+                color: black;
+            }
+
+            &:active {
+                background-color: rgb(251, 251, 251);
+            }
+        }
+    }
+
+    .menu {
+        padding: 2rem;
+        padding-top: 0;
+        position: relative;
+        text-align: center;
+
+        .active {
+            transform: scale(1.3);
+        }
+
+        nav {
+            ul {
+                line-height: 2.5rem;
+            }
+
+            .product {
+                padding: 0;
+
+                ul {
+                    display: none;
+                    line-height: 0;
+                }
+
+                &:hover,
+                .product--active {
+                    ul {
+                        display: block;
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+
+            li {
+                cursor: pointer;
+                list-style: none;
+
+                &:hover:not(.product) {
+                    transform: scale(1.3);
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}

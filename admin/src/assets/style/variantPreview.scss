@@ -1,0 +1,19 @@
+.variant--preview {
+    .bx--accordion__item--active .bx--accordion__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 30px;
+
+
+    }
+    .bx--accordion__content {
+        img {
+            width: 150px;
+            aspect-ratio: 3/4;
+            border: 1px solid rgb(169, 169, 169);
+        }
+    }
+}

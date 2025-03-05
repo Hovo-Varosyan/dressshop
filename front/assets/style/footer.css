@@ -1,0 +1,41 @@
+.footer {
+  li {
+    line-height: 3rem;
+  }
+
+  article {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    li {
+      width: max-content;
+    }
+  }
+
+  .icon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+  }
+
+  li:after,
+  .icon a::after {
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: white;
+    width: 0%;
+    transition: width 1s ease;
+  }
+
+  .icon a::after {
+    margin-top: 0.5rem;
+  }
+
+  li:hover:after,
+  .icon a:hover:after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+.file--status {
+
+    img,
+    video {
+        width: 100px;
+        aspect-ratio: 3/4;
+        border: 2px solid var(--border-color);
+    }
+
+    .flex-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    //accordion
+    .bx--accordion__content{
+        background-color: rgb(249 249 249);
+        padding-right: 10%;
+
+    }
+}
