@@ -13,7 +13,7 @@
       const { title, quantity, file, size } = variantObj;
       if (!title.trim()) {
         throw "Variant title is required";
-      } else if (!file.name) {
+      } else if (!file.length) {
         throw "variant file is required";
       } else if (quantity <= 0) {
         throw "The quantity field is required and must be greater than 0";
@@ -51,8 +51,8 @@
     </label>
     <Size bind:data={variantObj.size} />
   </div>
-  <Filebtn bind:data={variantObj.file} multiple={false} />
-  <Fileprevews bind:file={variantObj.file} />
+  <Filebtn bind:data={variantObj.file} maxLimit={1} multiple={false} />
+  <Fileprevews bind:file={variantObj.file[0]} />
   <section>
     <Button text="add" func={variantAdd} />
   </section>

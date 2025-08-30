@@ -6,14 +6,16 @@
   import ProductAdd from "./pages/productAdd.svelte";
   import "carbon-components-svelte/css/all.css";
   import Alert from "./components/ui/alert.svelte";
+  import HomeSlide from "./components/home/homeSlide.svelte";
 </script>
 
 <Router url="">
   <section class="global-container">
     <Menu />
     <section class="container">
-      <Route path="/product/add"><ProductAdd/></Route>
-      <Route path="/delivery"><Deliveri/></Route>
+      <Route path="/product/add"><ProductAdd /></Route>
+      <Route path="/home/slide"><HomeSlide/></Route>
+      <Route path="/delivery"><Deliveri /></Route>
       <Alert />
     </section>
   </section>

@@ -8,15 +8,15 @@
     height = 1200,
     video = false,
     ratio = 0.75, //3:4=0.75
+    maxLimit = 10,
   } = $props();
-  $inspect(data);
 
   function fileValidate(item, type = "image") {
     const fileTag =
       type === "image" ? new Image() : document.createElement("video");
     const src = URL.createObjectURL(item);
     fileTag.src = src;
-    const itemName = item.name;
+    const { name } = item;
     function clear() {
       URL.revokeObjectURL(src);
     }
@@ -27,13 +27,13 @@
           if (width < imgWidth || height < imgHeight) {
             reject(
               new Error(
-                `${itemName} Width must be at least ${width}  and Height must be at least ${height}`,
-              ),
+                `${name} Width must be at least ${width}  and Height must be at least ${height}`
+              )
             );
           } else if ((imgWidth / imgHeight).toFixed(2) != ratio) {
-            reject(new Error(`${itemName} Height and width must be equal`));
+            reject(new Error(`${name} Height and width must be equal`));
           } else if (item.size > 10485760) {
-            reject(new Error(`${itemName} size big 10mb`));
+            reject(new Error(`${name} size big 10mb`));
           } else {
             resolve(true);
           }
@@ -61,17 +61,17 @@
     let { files } = e.target;
 
     if (!files.length) return;
-    if (Array.isArray(data)) {
-      const dataLength = data.length,
+    if (maxLimit) {
+      const { length } = data,
         filesLength = files.length;
       if (
-        filesLength > 10 ||
-        dataLength == 10 ||
-        filesLength + dataLength > 10
+        filesLength > maxLimit ||
+        length == maxLimit ||
+        filesLength + length > maxLimit
       ) {
         alertMessage(
           "error",
-          "The number of selected files must not exceed 10",
+          "The number of selected files must not exceed 10"
         );
         return;
       }
@@ -94,15 +94,12 @@
       }
     }
   }
+
   function fileAdd(item) {
-    if (Array.isArray(data)) {
-      if (data.some(({ name }) => name === item.name)) {
-        throw new Error(`the file already exists ${item.name}`);
-      }
-      data.push(item);
-    } else {
-      data = item;
+    if (data.some(({ name }) => name === item.name)) {
+      throw new Error(`the file already exists ${item.name}`);
     }
+    data.push(item);
   }
 </script>
 

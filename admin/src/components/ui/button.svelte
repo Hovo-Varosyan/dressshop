@@ -43,9 +43,6 @@
     z-index: -1;
   }
 
-  button:hover {
-    color: white !important;
-  }
 
   button:hover::after {
     background-color: var(--my-green);

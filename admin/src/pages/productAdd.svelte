@@ -90,7 +90,7 @@
     </section>
 
     <Variant bind:data={product.variant} />
-    <VariantPreview data={product.variant} />
+    <VariantPreview bind:data={product.variant} />
     <Button type={"submit"} bind:loading disabled={loading} />
   </form>
 </section>

@@ -7,7 +7,7 @@
     import Button from "../ui/button.svelte";
     import "../../assets/style/variantPreview.scss";
 
-    let { data } = $props();
+    let { data=$bindable() } = $props();
     let open = $state(false);
 </script>
 
@@ -20,7 +20,7 @@
             {#each data as item, i (item.title + Math.round(Math.random() * 100).toString())}
                 <AccordionItem title={item.title} {open}>
                     <img
-                        src={URL.createObjectURL(item.file)}
+                        src={URL.createObjectURL(item.file[0])}
                         alt="product variant"
                     />
                     <span>{item.article}</span>
