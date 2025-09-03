@@ -1,48 +1,53 @@
+"use client"
+
 import Link from "next/link";
 import "../../assets/style/mainmenu.css";
 import { Orbitron } from "next/font/google";
 import clsx from "clsx/lite";
-import { Facebook, Instagram } from "@mui/icons-material";
-import { cookies } from "next/headers";
 import ShoppingBag from "../ui/shoppingbag";
 import ProfileBtn from "../ui/profileBtn";
+import { useState } from "react";
+
 const orbitron = Orbitron({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
-export default async function Mainmenu() {
+export default function Mainmenu() {
+  const [open, setOpen] = useState(false);
+  const [listOpen, setListOpen] = useState(false);
   return (
-    <header className="w-full header relative">
+    <header className="w-full header z-10 top-0 relative">
       <section className="w-full flex justify-between items-center text-center">
-        <div className="mx-4 flex gap-3">
-          <Link title="facebook" href="#">
-            <Facebook />
-          </Link>
-          <Link title="instagram" href="#">
-            <Instagram />
-          </Link>
-        </div>
-        <h2 className={clsx(orbitron.className, "m-6 flex-grow !text-6xl")}>
+
+        <h2 className={clsx(orbitron.className, "m-3 !text-3xl sm:m-6 flex-grow sm:!text-6xl ")}>
           LALAMBADA
         </h2>
-        <div className="flex gap-3 items-end">
-          <ShoppingBag isAuth={cookies().get("Y_V") ? true : false} />
-          <ProfileBtn isAuth={cookies().get("Y_V") ? true : false} />
+        <div className="flex gap-3 items-end ">
+          <div className="cursor-pointer hidden md:inline">  <ShoppingBag /></div>
+          <div className="hidden md:inline"><ProfileBtn /></div>
+          <button
+            className=" flex md:hidden mr-4 flex-col gap-2 cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+          </button>
         </div>
 
       </section>
       <section
-        className={`flex items-center w-10/13 px-3.5 m-auto capitalize text-xl p-2 my-container  justify-center `}
+        className={clsx(open ? 'block ' : "hidden", `items-center md:flex  px-3.5  capitalize text-xl p-2 my-container  justify-center `)}
       >
         <nav className="w-full">
-          <ul className="flex justify-around  my-2 ">
+          <ul className="md:flex px-4 md:px-0 block justify-around  my-2 ">
             <li className={"hover:scale-110"}>
               <Link href="/">home</Link>
             </li>
-            <li className={"block cursor-pointer product-list"}>
+            <li className={"block cursor-pointer product-list group"} onClick={() => setListOpen(!listOpen)} onMouseLeave={() => setListOpen(false)}>
               <p>product</p>
-              <div className="absolute z-50 pt-7 min-w-full  active left-0">
-                <ul className=" mx-auto bg-black flex min-w-full flex-wrap justify-center  p-5 text-base menu-header  ">
+              <div className={clsx(listOpen && "!block", "md:absolute md:z-50 md:pt-7 min-w-full  group-hover:md:block hidden  md:left-0")}>
+                <ul className=" block md:flex  flex-wrap justify-center  p-5 text-base menu-header  ">
                   <li>
                     <Link href="/category/shoes">Վերարկուներ</Link>
                   </li>
@@ -69,6 +74,10 @@ export default async function Mainmenu() {
             </li>
             <li className={"hover:scale-110"}>
               <Link href="/delivery">delivery</Link>
+            </li>
+            <li className={"md:hidden hover:scale-110"}>
+              <div className="flex align-bottom"><span className="mt-[5px]">My Profile</span><ProfileBtn /></div>
+
             </li>
           </ul>
         </nav>

@@ -1,9 +1,8 @@
 import PersonIcon from "@mui/icons-material/Person";
 import Link from "next/link";
 
-export default function ProfileBtn({ isAuth }) {
+export default function ProfileBtn({ isAuth=false }) {
   return (
-    <div>
       <Link
         title="my profile"
         className="capitalize text-xl m-6"
@@ -11,6 +10,5 @@ export default function ProfileBtn({ isAuth }) {
       >
         <PersonIcon />
       </Link>
-    </div>
   );
 }

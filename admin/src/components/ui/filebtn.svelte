@@ -32,8 +32,6 @@
             );
           } else if ((imgWidth / imgHeight).toFixed(2) != ratio) {
             reject(new Error(`${name} Height and width must be equal`));
-          } else if (item.size > 10485760) {
-            reject(new Error(`${name} size big 10mb`));
           } else {
             resolve(true);
           }
@@ -61,7 +59,7 @@
     let { files } = e.target;
 
     if (!files.length) return;
-    if (maxLimit) {
+    if (maxLimit && multiple) {
       const { length } = data,
         filesLength = files.length;
       if (
@@ -71,7 +69,7 @@
       ) {
         alertMessage(
           "error",
-          "The number of selected files must not exceed 10"
+          "The number of selected files must not exceed " + maxLimit
         );
         return;
       }
@@ -99,7 +97,7 @@
     if (data.some(({ name }) => name === item.name)) {
       throw new Error(`the file already exists ${item.name}`);
     }
-    data.push(item);
+    multiple ? data.push(item) : (data[0] = item);
   }
 </script>
 

@@ -3,11 +3,13 @@
 .anim-text {
   animation: text-show 1.5s linear forwards;
 }
+
 .mainslide {
   width: 100%;
   aspect-ratio: 16/9;
-  img{
-      height: 100%;
+
+  img {
+    height: 100%;
   }
 }
 
@@ -15,17 +17,18 @@
 
   .swiper-slide,
   image-slider {
-      width: 17%;
+    width: 17%;
   }
-  
+
 
   .product-container {
-      figure {
-          border-radius: 8px;
-          img {
-              height: 100%;
-          }
+    figure {
+      border-radius: 8px;
+
+      img {
+        height: 100%;
       }
+    }
 
   }
 }
@@ -53,7 +56,7 @@
 
 .home-vintage {
   display: grid;
-  grid-template-columns: 450px 450px;
+  grid-template-columns: repeat(2, minmax(240px, 450px));
   justify-content: center;
 
   figure {
@@ -65,12 +68,17 @@
 .about {
 
   figure {
-    min-width: 30%;
     border: 3px solid gray;
 
     img {
 
       height: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-vintage {
+    grid-template-columns: 1fr;
   }
 }

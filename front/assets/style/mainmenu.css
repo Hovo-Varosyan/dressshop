@@ -1,39 +1,30 @@
 .header {
-    top: 0;
-    z-index: 10;
+  box-shadow: 0 0px 7px black;
+
+  li,
+  .product-list p {
+    transition: transform 0.5s;
+  }
+
+  .menu-header {
     box-shadow: 0 0px 7px black;
+  }
 
+  .product-list:hover {
+    p {
+      transform: scale(1.1);
+    }
+  }
 
+  .product-list ul {
     li {
-        transition: transform 0.5s;
+      margin: 0.25rem 1rem;
     }
 
-    .menu-header {
-        top: 170%;
-        box-shadow: 0 0px 7px black;
+    li:hover {
+      transform: scale(1.2);
     }
+  }
 
-    .product-list:hover {
-        .active {
-            display: block;
-        }
 
-        p {
-            transform: scale(1.1);
-        }
-    }
-
-    .active {
-        display: none;
-
-        ul {
-            li {
-                margin: 0.25rem 1rem;
-            }
-
-            li:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
 }

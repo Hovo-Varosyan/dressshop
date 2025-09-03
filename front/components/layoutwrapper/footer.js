@@ -3,10 +3,10 @@ import "../../assets/style/footer.css";
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-3 my-container footer">
+    <footer className="py-8 w-full px-5 sm:px-3  footer">
       <hr className="block my-3" />
-      <section className="flex max-w-[2200]  justify-around gap-3 w-full text-xl">
-        <article className="capitalize ">
+      <section className="flex max-w-[1250px] mx-auto gap-3 w-full text-xl">
+        <article className="capitalize  hidden w-2/4 sm:flex ">
           <nav>
             <ul>
               <li>
@@ -21,7 +21,7 @@ export default function Footer() {
             </ul>
           </nav>
         </article>
-        <article>
+        <article className="capitalize sm:w-2/4  w-full ">
           <section>
             <ul>
               <li>
@@ -37,11 +37,9 @@ export default function Footer() {
           </section>
         </article>
       </section>
-      <section>
-        <p>
-          <i>все авторские права зашишены 2024@</i>
-        </p>
-      </section>
+      <p className="my-3">
+        <i>все авторские права зашишены 2024@</i>
+      </p>
     </footer>
   );
 }
