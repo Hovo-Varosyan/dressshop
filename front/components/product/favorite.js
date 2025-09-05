@@ -10,7 +10,6 @@ import userStore from "../../store/userStore";
 
 export default function Favorite({ id }) {
     const { favorite: favoriteList  } = userStore()?.profileData ?? []
-    console.log(favorite?.includes(id))
     const [favorite, setfavorite] = useState(favoriteList?.includes(id));
     const [loading, setLoading] = useState(false);
     const isAuth = useAuth();

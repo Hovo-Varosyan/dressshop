@@ -7,6 +7,7 @@
   import "carbon-components-svelte/css/all.css";
   import Alert from "./components/ui/alert.svelte";
   import Home from "./pages/home.svelte";
+  import Analitics from "./pages/analitics.svelte";
 </script>
 
 <Router url="">
@@ -16,6 +17,7 @@
       <Route path="/product/add"><ProductAdd /></Route>
       <Home />
       <Route path="/delivery"><Deliveri /></Route>
+      <Route path="/analitics"><Analitics /></Route>
       <Alert />
     </section>
   </section>

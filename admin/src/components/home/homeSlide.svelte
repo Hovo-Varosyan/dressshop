@@ -24,7 +24,7 @@
     loading = true;
     const fileData = new FormData();
     data.forEach((file, index) => {
-      fileData.append(`index`, file);
+      fileData.append(`index${index}`, file);
     });
     server
       .post("/admin/home/slide", fileData, {

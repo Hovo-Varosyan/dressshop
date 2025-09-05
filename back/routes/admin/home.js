@@ -57,4 +57,6 @@ const upload = multer({
 })
 
 router.post("/slide", upload.any(), Home.updateSlide)
+router.post("/texttwo", Home.updateTextTwo)
+
 module.exports = router;

@@ -34,6 +34,11 @@
                   ><span class={clsx(active && "active")}>text 1</span></Link
                 >
               </li>
+               <li>
+                <Link to="/home/texttwo" let:active
+                  ><span class={clsx(active && "active")}>text 2</span></Link
+                >
+              </li>
             </ul>
           </li>
           <li>

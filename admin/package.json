@@ -21,6 +21,7 @@
     "axios": "^1.7.9",
     "carbon-components-svelte": "^0.87.3",
     "clsx": "^2.1.1",
+    "d3": "^7.9.0",
     "object-to-formdata": "^4.5.1",
     "quill": "^2.0.3",
     "svelte": "^5.19.6",
