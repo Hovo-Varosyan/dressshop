@@ -2,7 +2,7 @@ const router = require("express").Router()
 const multer = require("multer");
 const fs = require("fs")
 const path = require("path")
-const Product=require("../../controller/admin/product")
+const Product = require("../../controller/admin/product")
 const { v4: uuid } = require("uuid");
 
 const uploadDir = path.join(__dirname, "..", "..", "media", 'product');
@@ -14,6 +14,7 @@ if (!fs.existsSync(path.join(uploadDir, "videos"))) {
     fs.mkdirSync(path.join(uploadDir, "videos"), { recursive: true });
 
 }
+
 
 const storage = multer.diskStorage({
 

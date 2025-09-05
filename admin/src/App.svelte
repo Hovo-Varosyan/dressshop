@@ -6,7 +6,7 @@
   import ProductAdd from "./pages/productAdd.svelte";
   import "carbon-components-svelte/css/all.css";
   import Alert from "./components/ui/alert.svelte";
-  import HomeSlide from "./components/home/homeSlide.svelte";
+  import Home from "./pages/home.svelte";
 </script>
 
 <Router url="">
@@ -14,7 +14,7 @@
     <Menu />
     <section class="container">
       <Route path="/product/add"><ProductAdd /></Route>
-      <Route path="/home/slide"><HomeSlide/></Route>
+      <Home />
       <Route path="/delivery"><Deliveri /></Route>
       <Alert />
     </section>

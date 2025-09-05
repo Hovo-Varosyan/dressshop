@@ -1,5 +1,6 @@
 <script>
   import { Loading } from "carbon-components-svelte";
+  import clsx from "clsx/lite";
 
   const {
     text = "save",
@@ -10,7 +11,11 @@
   } = $props();
 </script>
 
-<button onclick={func}  {type} {disabled}
+<button
+  onclick={func}
+  class={clsx(loading && "cursor-progress")}
+  {type}
+  disabled={disabled || loading}
   >{text}
   {#if loading}
     <Loading withOverlay={false} small />{/if}</button
@@ -32,6 +37,7 @@
     background-color: var(--disabled-color);
     border-color: var(--btn-disabled);
     color: var(--btn-disabled);
+    cursor: not-allowed;
   }
   button::after {
     content: "";
@@ -42,7 +48,6 @@
     height: 100%;
     z-index: -1;
   }
-
 
   button:hover::after {
     background-color: var(--my-green);

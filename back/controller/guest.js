@@ -1,5 +1,6 @@
 const productModel = require("../db/model/productmodel")
 const createError = require("http-errors")
+const homeModel = require("../db/model/homemodel")
 
 class Guest {
     static async getCategory(req, res, next) {
@@ -27,6 +28,14 @@ class Guest {
             next(err)
         }
 
+    }
+    static async getHomeData(req, res, next) {
+        try {
+            const data = await homeModel.findOne()
+            res.json(data)
+        } catch (err) {
+            next(err)
+        }
     }
 }
 module.exports = Guest

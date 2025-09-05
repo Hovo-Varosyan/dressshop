@@ -14,7 +14,7 @@ export default function formData(item) {
             item.variant.forEach((variant, index) => {
                 data.append(`variant[${index}]`, variant.file);
             });
-        }else{
+        } else {
             data.append("variant", [])
         }
         item.files.forEach((file, index) => {

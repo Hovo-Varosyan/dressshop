@@ -34,11 +34,6 @@
                   ><span class={clsx(active && "active")}>text 1</span></Link
                 >
               </li>
-              <li>
-                <Link to="/home/galerey" let:active
-                  ><span class={clsx(active && "active")}>galerey</span></Link
-                >
-              </li>
             </ul>
           </li>
           <li>

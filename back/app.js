@@ -48,15 +48,24 @@ app.use(
   "/productimg",
   express.static(path.join(__dirname, "media", "product", "images"), {
     setHeaders: (res) => {
-      res.set("Cache-Control", "public, max-age=31536000, immutable");
       res.set("Cross-Origin-Resource-Policy", "cross-origin");
     }
   })
 );
-
+app.use("/images", express.static(path.join(__dirname, "media", "home", "images"), {
+  setHeaders: (res) => {
+    res.set("Cross-Origin-Resource-Policy", "cross-origin");
+  }
+})
+);
+app.use("/videos", express.static(path.join(__dirname, "media", "home", "videos"), {
+  setHeaders: (res) => {
+    res.set("Cross-Origin-Resource-Policy", "cross-origin");
+  }
+})
+);
 app.use("/productvideo", express.static(path.join(__dirname, "media", "product", "videos"), {
   setHeaders: (res) => {
-    res.set("Cache-Control", "public, max-age=31536000, immutable");
     res.set("Cross-Origin-Resource-Policy", "cross-origin");
   }
 })

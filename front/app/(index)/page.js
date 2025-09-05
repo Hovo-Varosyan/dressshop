@@ -4,18 +4,26 @@ import Mainslide from "../../components/home/mainslide";
 import clsx from "clsx/lite";
 import { useInView } from "react-intersection-observer";
 import "./home.css";
-
-
+import api from "../../middleware/api";
+import {useState, useEffect} from "react"
 
 export default function Home() {
   const { ref, inView } = useInView({
     threshold: 0.8,
     triggerOnce: true,
   });
+  const [data, setData] = useState([])
+  useEffect(() => {
+    api.get("/").then((res) => {
+      setData(res.data)
+      console.log(res.data)
+    }
+    ).catch(err => console.log(err))
+  }, [])
 
   return (
     <>
-      <Mainslide />
+      <Mainslide data={data.slide}/>
       <section className="max-w-[1250px] mx-auto">
         <div
           className={clsx(

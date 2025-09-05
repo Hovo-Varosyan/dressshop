@@ -5,16 +5,19 @@
   import "../assets/style/editor.scss";
   import Button from "./ui/button.svelte";
   import alertMessage from "../middleware/alertMessage";
+  import { v4 as uuidv4 } from "uuid";
+  import clsx from "clsx";
   let { value = $bindable(), media = false } = $props();
   let mediaList = [];
   let quill;
+  let id = `editor-${uuidv4()}`;
 
   onMount(() => {
     if (quill && value == "") clearEditorText();
     if (media) {
       mediaList = ["image", "video"];
     }
-    quill = new Quill(document.getElementById("editor"), {
+    quill = new Quill(document.getElementById(id), {
       placeholder: "Enter text...",
       theme: "snow",
       modules: {
@@ -54,10 +57,9 @@
 
 <section>
   <div class="editor-container">
-    <div id="editor" class="editor"></div>
+    <div {id} class="editor"></div>
     <div class="clear delete">
       <Button text="clear" func={clearEditorText} />
     </div>
   </div>
 </section>
-
