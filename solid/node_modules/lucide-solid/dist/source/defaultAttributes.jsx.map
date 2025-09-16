@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/defaultAttributes.ts"],
+  "sourcesContent": ["import { JSX } from 'solid-js/jsx-runtime';\nimport { SVGAttributes } from './types';\n\nconst defaultAttributes: SVGAttributes = {\n  xmlns: 'http://www.w3.org/2000/svg',\n  width: 24,\n  height: 24,\n  viewBox: '0 0 24 24',\n  fill: 'none',\n  stroke: 'currentColor',\n  'stroke-width': 2,\n  'stroke-linecap': 'round',\n  'stroke-linejoin': 'round',\n};\n\nexport default defaultAttributes;\n"],
+  "mappings": ";;;;;;;;AAGA,IAAM,oBAAmC;AAAA,EACvC,OAAO;AAAA,EACP,OAAO;AAAA,EACP,QAAQ;AAAA,EACR,SAAS;AAAA,EACT,MAAM;AAAA,EACN,QAAQ;AAAA,EACR,gBAAgB;AAAA,EAChB,kBAAkB;AAAA,EAClB,mBAAmB;AACrB;AAEA,IAAO,4BAAQ;",
+  "names": []
+}

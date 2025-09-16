@@ -1,0 +1,34 @@
+/*
+The propTraps object coles from solid-js repository:
+https://github.com/solidjs/solid/blob/main/packages/solid/src/render/component.ts
+*/
+import { $PROXY } from "solid-js";
+function trueFn() {
+    return true;
+}
+export const propTraps = {
+    get(_, property, receiver) {
+        if (property === $PROXY)
+            return receiver;
+        return _.get(property);
+    },
+    has(_, property) {
+        return _.has(property);
+    },
+    set: trueFn,
+    deleteProperty: trueFn,
+    getOwnPropertyDescriptor(_, property) {
+        return {
+            configurable: true,
+            enumerable: true,
+            get() {
+                return _.get(property);
+            },
+            set: trueFn,
+            deleteProperty: trueFn,
+        };
+    },
+    ownKeys(_) {
+        return _.keys();
+    },
+};
