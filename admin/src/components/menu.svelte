@@ -34,9 +34,14 @@
                   ><span class={clsx(active && "active")}>text 1</span></Link
                 >
               </li>
-               <li>
+              <li>
                 <Link to="/home/texttwo" let:active
                   ><span class={clsx(active && "active")}>text 2</span></Link
+                >
+              </li>
+              <li>
+                <Link to="/home/textthree" let:active
+                  ><span class={clsx(active && "active")}>text 3</span></Link
                 >
               </li>
             </ul>

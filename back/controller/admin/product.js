@@ -1,34 +1,29 @@
-const productModel=require("../../db/model//productmodel")
+const productModel = require("../../db/model//productmodel")
 
 class Product {
     static async add(req, res, next) {
-        try {
-            const { title, material, category, description, files, size, price, mainImg, hoverImg } = req.body
 
-            if (files.length > 10) {
-                fileDelete(files)
-                if (req.body.variant.length) {
-                    const variantFile = req.body.variant.map(item => {
-                        return item.file
-                    })
-                    fileDelete(variantFile)
-                }
-                throw new Error("files max limit 10")
+        try {
+            const { title, material, category, description, size, price, mainImg, hoverImg, variant = null } = req.body
+            const { files } = req
+            if (files.filter(file => file.fieldname.startsWith("files")).length > 10) {
+                fileDelete(files.map(file => file.filename))
             }
             const newReq = {
-                title,
+                title: JSON.parse(title),
                 material: JSON.parse(material),
                 category,
-                description,
-                mainImg: mainImg || files[0] || "",
-                hoverImg: hoverImg || files[1] || "",
+                description: JSON.parse(description),
+                mainImg: mainImg || files[0].name || "",
+                hoverImg: hoverImg || files[1].name || "",
                 size: JSON.parse(size),
                 price: JSON.parse(price),
-                files,
+                files: files.map(file => ({ name: file.filename, fileType: file.mimetype.split("/")[0] }))
             }
-            if (req.body?.variant) {
-                newReq.variant = req.body.variant
+            if (variant) {
+                newReq.variant = variant
             }
+            console.log(newReq)
             const data = new productModel(newReq)
             await data.save()
             return res.json({ message: "Product added" })
@@ -39,4 +34,4 @@ class Product {
         }
     }
 }
-module.exports=Product
+module.exports = Product

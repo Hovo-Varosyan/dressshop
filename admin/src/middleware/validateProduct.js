@@ -1,14 +1,15 @@
 export default function validateProduct(product) {
-    if (!product.title.trim()) {
+    if (Object.values(product.title).some(val => !val.trim())) {
         throw new Error("Title cannot be empty.");
     }
-    else if (!product.material.trim()) {
+    else if (Object.values(product.material).some(val => !val.trim())) {
         throw new Error("Material cannot be empty.");
     }
     else if (!product.category) {
         throw new Error("Category is required.");
     }
-    else if (!product.description.trim() || product.description === '<p><br></p>') {
+    else if (Object.values(product.description).some(val => !val.trim() || val === '<p><br></p>')
+    ) {
         throw new Error("Description cannot be empty.");
     }
     else if (!product.size.length) {
@@ -19,7 +20,7 @@ export default function validateProduct(product) {
     }
     else if (product.price.value <= 0) {
         throw new Error("Price must be greater than 0.");
-    } else if (product.variant.length < 2 && product.variant.length > 0) {
+    } else if (product.variant.length === 1) {
         throw new Error(
             "The number of product variants should be at least 2, or there should be none.",
         );

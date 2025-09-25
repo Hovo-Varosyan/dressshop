@@ -9,30 +9,32 @@ class Home {
             next(err)
         }
     }
-    static async updateTextOne(req, res, next) {
+    static async updateText(req, res, next) {
         try {
+            const { number } = req.params;
             const { title, desc } = req.body;
             const updatedHome = await homeModel.findOneAndUpdate({}, {
-                "about.textOne.title": title,
-                "about.textOne.desc": desc
+                [`about.${number}.title`]: title,
+                [`about.${number}.desc`]: desc
             }, { new: true, upsert: true });
             res.json({ message: "Text One updated", updatedHome });
         } catch (err) {
             next(err);
         };
     }
-    static async updateTextTwo(req, res, next) {
+
+    static async updateTextTwoFile(req, res, next) {
         try {
-            const { title, description } = req.body;
+            const { fileName } = req
+            console.log(fileName[0])
             const updatedHome = await homeModel.findOneAndUpdate({}, {
-                "about.textTwo.title": title,
-                "about.textTwo.desc": description
+                "about.textTwo.img": fileName[0]
             }, { new: true, upsert: true });
-            res.json({ message: "Text One updated", updatedHome });
+            res.json({ message: "Text Two image updated", updatedHome });
         } catch (err) {
+            console.log(err)
             next(err);
         }
     }
-
 }
 module.exports = Home;

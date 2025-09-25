@@ -25,7 +25,7 @@ export default function Mainslide({ data }) {
       {
         data?.map(e => {
           return <SwiperSlide key={e}>
-            <img className="w-full" src={`http://localhost:4000/images/${e}`} alt="banner" />
+            <img className="w-full" src={`http://localhost:4000/images/${e.name}`} alt="banner" />
           </SwiperSlide>
         })
       }

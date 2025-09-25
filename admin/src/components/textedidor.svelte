@@ -7,13 +7,15 @@
   import alertMessage from "../middleware/alertMessage";
   import { v4 as uuidv4 } from "uuid";
   import clsx from "clsx";
-  let { value = $bindable(), media = false } = $props();
+  let { value = $bindable(), media = false, curentLang } = $props();
   let mediaList = [];
   let quill;
   let id = `editor-${uuidv4()}`;
+  quill.root.innerHTML = value;
 
   onMount(() => {
     if (quill && value == "") clearEditorText();
+
     if (media) {
       mediaList = ["image", "video"];
     }

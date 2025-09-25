@@ -2,13 +2,33 @@ const { Schema, model } = require("mongoose");
 
 const homeSchema = new Schema({
     slide: {
-        type: [String],
+        type: [{
+                                _id: false,
+            name: { type: String, default: "" },
+            fsType: { type: String, default: "" }
+        }],
     },
     about: {
-        // пустая строка по умолчанию
-
         textOne: {
-            img: { type: String, default: "" },
+            title: {
+                ru: { type: String, default: "" },
+                en: { type: String, default: "" },
+                hy: { type: String, default: "" }
+            },
+            desc: {
+                ru: { type: String, default: "" },
+                en: { type: String, default: "" },
+                hy: { type: String, default: "" }
+            }
+        },
+        textTwo: {
+            img: {
+                type: {
+                    _id: false,
+                    name: { type: String, default: "" },
+                    fsType: { type: String, default: "" }
+                }
+            },
             title: {
                 ru: { type: String, default: "" },
                 en: { type: String, default: "" },
@@ -21,7 +41,7 @@ const homeSchema = new Schema({
             }
         },
 
-        textTwo: {
+        textThre: {
             title: {
                 ru: { type: String, default: "" },
                 en: { type: String, default: "" },

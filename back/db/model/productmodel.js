@@ -8,15 +8,15 @@ const priceSchema = new Schema({
 });
 
 const schema = new Schema({
-    title: { type: String, required: true },
-    material: { type: [String], required: true },
+    title: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
+    material: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
     category: { type: String, required: true },
     mainImg: { type: String, default: "" },
     hoverImg: { type: String, default: "" },
     price: priceSchema,
     date: { type: Date, default: Date.now },
     files: {
-        type: [String],
+        type: [{ name: String, fileType: String, _id: false }],
         required: true,
         validate: {
             validator: function (value) {
@@ -25,14 +25,16 @@ const schema = new Schema({
             message: 'Files array must have at least 1 element'
         }
     },
-    description: { type: String, required: true },
-    variant: [{
-        title: { type: String, required: true },
-        file: { type: String, required: true },
-        quantity: { type: Number, required: true },
-        size: [String],
-        _id: { type: Types.ObjectId, default: new Types.ObjectId, required: true }
-    }],
+    description: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
+    variant: {
+        type: [{
+            title: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
+            file: { type: { name: String, fileType: String, _id: false }, required: true },
+            quantity: { type: Number, required: true },
+            size: [String],
+            _id: { type: Types.ObjectId, default: new Types.ObjectId, required: true }
+        }], required: false, default: undefined
+    },
     size: { type: [String], required: true }
 });
 

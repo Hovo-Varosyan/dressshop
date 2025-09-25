@@ -9,19 +9,19 @@
   <input
     name={`title${lang}`}
     type="text"
-class="title-lang"
+    class="title-lang"
     placeholder={`Title ${lang}`}
     bind:value={data.title[lang]}
   />
   <Textedidor bind:value={data.description[lang]} />
 </section>
- 
+
 <style>
-   .title-lang{
+  .title-lang {
     width: 100%;
     padding: 10px 15px;
     margin: 5px 0 20px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-   }
+  }
 </style>

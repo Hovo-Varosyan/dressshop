@@ -1,6 +1,6 @@
 <script>
     import Size from "./size.svelte";
-    let { data = $bindable() } = $props();
+    let { data = $bindable(), curentLang } = $props();
 </script>
 
 <div class="product_data flex">
@@ -12,7 +12,7 @@
         <input
             type="text"
             placeholder="Enter materials separated by commas - cotton, polyester, ..."
-            bind:value={data.material}
+            bind:value={data.material[curentLang]}
             required
         /></label
     >

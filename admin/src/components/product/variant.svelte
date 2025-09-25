@@ -5,14 +5,16 @@
   import Fileprevews from "./fileprevews.svelte";
   import { variant } from "../../assets/json/product.json";
   import Size from "./size.svelte";
-  let { data = $bindable() } = $props();
+  
+  let { data = $bindable(), curentLang } = $props();
   let variantObj = $state(variant);
+  let language = $state(curentLang);
 
   function variantAdd() {
     try {
       const { title, quantity, file, size } = variantObj;
-      if (!title.trim()) {
-        throw "Variant title is required";
+      if (Object.values(title).some(val => !val.trim())) {
+        throw "Variant title all language is required";
       } else if (!file.length) {
         throw "variant file is required";
       } else if (quantity <= 0) {
@@ -20,7 +22,6 @@
       } else if (!size.length) {
         throw "Size must be specified.";
       }
-
       data.push(variantObj);
       variantObj = variant;
     } catch (err) {
@@ -33,12 +34,17 @@
   <h4>Variant</h4>
 
   <div class="flex">
+    <select id="lang-select" bind:value={language}>
+      <option value="en">English</option>
+      <option value="hy">Armenian</option>
+      <option value="ru">Russian</option>
+    </select>
     <label
       >title <input
         type="text"
         name="variant"
-        bind:value={variantObj.title}
-        placeholder="enter title..."
+        bind:value={variantObj.title[language]}
+        placeholder={`enter title...${language}`}
       /></label
     >
     <label

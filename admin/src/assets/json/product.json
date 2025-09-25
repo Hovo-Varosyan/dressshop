@@ -1,7 +1,15 @@
 {
   "product": {
-    "title": "",
-    "material": "",
+    "title": {
+      "en": "",
+      "hy": "",
+      "ru": ""
+    },
+    "material": {
+      "en": "",
+      "hy": "",
+      "ru": ""
+    },
     "category": "",
     "mainImg": "",
     "hoverImg": "",
@@ -11,12 +19,21 @@
       "total": 0
     },
     "files": [],
-    "description": "",
+    "description": {
+      "en": "",
+      "hy": "",
+      "ru": ""
+    },
     "variant": [],
     "size": []
   },
+  
   "variant": {
-    "title": "",
+    "title": {
+      "en": "",
+      "hy": "",
+      "ru": ""
+    },
     "quantity": 0,
     "file": [],
     "size": []

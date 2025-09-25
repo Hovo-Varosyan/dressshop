@@ -23,7 +23,7 @@
     totoal: "",
     status: "active",
   });
-
+  let curentLang = $state("en");
   let loading = $state(false);
   let product = $state(productJson);
   $inspect(product);
@@ -70,27 +70,32 @@
   <form onsubmit={onSubmit} enctype="multipart/form-data">
     <h2>Product</h2>
     <section>
+      <select id="lang-select" bind:value={curentLang}>
+        <option value="en">English</option>
+        <option value="hy">Armenian</option>
+        <option value="ru">Russian</option>
+      </select>
       <label
         >title <input
           type="text"
-          bind:value={product.title}
+          bind:value={product.title[curentLang]}
           name="variant"
-          placeholder="enter title..."
+          placeholder={`enter title...${curentLang}`}
           required
         /></label
       >
       <div class="product_editor">
-        <Textedidor bind:value={product.description} />
+        <Textedidor bind:value={product.description[curentLang]} />
       </div>
       <Price bind:price={product.price} />
-      <ProductData bind:data={product} />
+      <ProductData bind:data={product} {curentLang} />
 
       <Filebtn bind:data={product.files} video={true} />
       <FileStatus bind:product />
     </section>
 
-    <Variant bind:data={product.variant} />
-    <VariantPreview bind:data={product.variant} />
+    <Variant bind:data={product.variant} {curentLang} />
+    <VariantPreview bind:data={product.variant} {curentLang} />
     <Button type={"submit"} bind:loading disabled={loading} />
   </form>
 </section>

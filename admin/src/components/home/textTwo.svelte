@@ -1,18 +1,34 @@
 <script>
   import alertMessage from "../../middleware/alertMessage";
   import server from "../../middleware/api";
-  import MainText from "../mainText.svelte";
+  import Loading from "../loading.svelte";
   import Button from "../ui/button.svelte";
-  let data = $state({
-    title: { en: "", hy: "", ru: "" },
-    description: { en: "", hy: "", ru: "" },
-  });
+  import Filebtn from "../ui/filebtn.svelte";
+  import FilePreviws from "./filePreviws.svelte";
+  import Text from "./text.svelte";
+
   let loading = $state(false);
-  let currentLang = $state("en");
+  let files = $state([]);
+   let progress = $state({
+    loaded: "",
+    totoal: "",
+    status: "active",
+  });
+  $inspect(files);
+
   function handleSubmit(e) {
     e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("file", files[0]);
+    console.log(formData);
+    loading = true;
     server
-      .post("/admin/home/textTwo", data)
+      .post("/admin/home/texttwofile", formData, {
+        onUploadProgress: (e) => {
+          (progress.totoal = e.total), (progress.loaded = e.loaded);
+        },
+      })
       .then((res) => {
         alertMessage("success", res);
       })
@@ -24,28 +40,17 @@
       });
   }
 </script>
-
-<section class="main-text">
-  <label for="lang-select">Select language:</label>
-  <select id="lang-select" bind:value={currentLang}>
-    <option value="en">English</option>
-    <option value="hy">Armenian</option>
-    <option value="ru">Russian</option>
-  </select>
-  <form method="post" onsubmit={handleSubmit}>
-    <MainText lang={currentLang} bind:data />
-    <Button type={"submit"} {loading} />
-  </form>
+<section class="flex-center">
+  <Loading
+    bind:total={progress.totoal}
+    bind:loaded={progress.loaded}
+    bind:status={progress.status}
+    bind:loading
+  />
 </section>
-
-<style>
-  section {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 30px;
-    width: 60%;
-  }
-  select {
-    min-width: 150px;
-  }
-</style>
+<Text api="/admin/home/text/textTwo" />
+<form method="post" enctype="multipart/form-data" onsubmit={handleSubmit}>
+  <Filebtn multiple="false" bind:data={files} />
+  <FilePreviws {files} />
+  <Button type={"submit"} {loading} />
+</form>

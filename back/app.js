@@ -11,6 +11,7 @@ const compression = require("compression")
 const { db } = require("./db/connect");
 const multer = require("multer");
 const fileDelete = require("./middleware/utils/fileDelate");
+ require("./middleware/utils/checkFolderExists")()
 app = express();
 
 app.disable("x-powered-by");
