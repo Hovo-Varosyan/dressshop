@@ -5,7 +5,7 @@ const homeModel = require("../db/model/homemodel")
 class Guest {
     static async getCategory(req, res, next) {
         try {
-            const data = await productModel.find().select("title  mainImg hoverImg price")
+            const data = await productModel.find().select("title  mainFile hoverFile price")
             if (!data.length) {
                 next(new createError.NotFound())
             }

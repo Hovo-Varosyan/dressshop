@@ -5,8 +5,8 @@ export default function formData(item) {
         data.append("material", JSON.stringify(item.material));
         data.append("category", item.category);
         data.append("description", JSON.stringify(item.description));
-        data.append("mainImg", item.mainImg);
-        data.append("hoverImg", item.hoverImg);
+        data.append("mainFile", item.mainFile);
+        data.append("hoverFile", item.hoverFile);
         data.append("size", JSON.stringify(item.size));
         data.append("price", JSON.stringify(item.price));
         if (item.variant.length) {

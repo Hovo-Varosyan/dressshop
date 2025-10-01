@@ -27,11 +27,15 @@ const storage = multer.diskStorage({
             const ext = path.extname(originalname);
             const name = `${uuid()}-${Date.now()}${ext}`
             if (fieldname.startsWith("files")) {
-                if (originalname === req.body.mainImg) {
-                    req.body.mainImg = name
+                if (!req.body.fileData) {
+                    req.body.fileData = []
                 }
-                else if (originalname === req.body.hoverImg) {
-                    req.body.hoverImg = name
+                req.body.fileData.push({ name, fileType: mimetype.split("/")[0] })
+                if (originalname === req.body.mainFile) {
+                    req.body.mainFile = { name, fileType: mimetype.split("/")[0] }
+                }
+                else if (originalname === req.body.hoverFile) {
+                    req.body.hoverFile = { name, fileType: mimetype.split("/")[0] }
                 }
             } else if (req.body?.variant && fieldname.endsWith("variant")) {
                 if (typeof req.body.variant === "string") {

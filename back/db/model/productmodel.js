@@ -11,8 +11,8 @@ const schema = new Schema({
     title: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
     material: { type: { en: String, hy: String, ru: String, _id: false }, required: true },
     category: { type: String, required: true },
-    mainImg: { type: String, default: "" },
-    hoverImg: { type: String, default: "" },
+    mainFile: { type: { name: String, fileType: String, _id: false } },
+    hoverFile: { type: { name: String, fileType: String, _id: false } },
     price: priceSchema,
     date: { type: Date, default: Date.now },
     files: {

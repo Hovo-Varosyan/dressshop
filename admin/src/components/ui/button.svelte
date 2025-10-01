@@ -53,6 +53,9 @@
     background-color: var(--my-green);
     animation: btn-width 0.2s linear forwards;
   }
+  button:hover {
+    color: white;
+  } 
   @keyframes btn-width {
     100% {
       width: 100%;

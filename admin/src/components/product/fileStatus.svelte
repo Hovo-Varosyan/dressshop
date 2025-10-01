@@ -12,10 +12,10 @@
 
   function deleteItem(index, name) {
     product.files.splice(index, 1);
-    if (product.hoverImg === name) {
-      product.hoverImg = "";
-    } else if (product.mainImg === name) {
-      product.mainImg = "";
+    if (product.hoverFile === name) {
+      product.hoverFile = "";
+    } else if (product.mainFile === name) {
+      product.mainFile = "";
     }
   }
 </script>
@@ -34,7 +34,7 @@
           <AccordionItem title={file.name} {open}>
             {@const name = file.name}
             {@const disabled =
-              name == product.mainImg || name == product.hoverImg}
+              name == product.mainFile || name == product.hoverFile}
             <div class="flex-between">
               {#if file.type.startsWith("image")}
                 <figure class="file--container">
@@ -54,12 +54,12 @@
                 <Button
                   text={"make main"}
                   {disabled}
-                  func={() => (product.mainImg = name)}
+                  func={() => (product.mainFile = name)}
                 />
                 <Button
                   text={"make secondary"}
                   {disabled}
-                  func={() => (product.hoverImg = name)}
+                  func={() => (product.hoverFile = name)}
                 />
                 <div class="delete">
                   <Button text={"delete"} func={() => deleteItem(i, name)} />

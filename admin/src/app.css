@@ -83,8 +83,12 @@ h6 {
 }
 
 .delete button {
+  cursor:pointer;;
   border: 2px solid red !important;
   color: red !important;
+}
+.delete:hover button {
+  color: white !important;
 }
 
 .delete button:hover::after {

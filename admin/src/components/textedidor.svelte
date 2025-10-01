@@ -11,11 +11,8 @@
   let mediaList = [];
   let quill;
   let id = `editor-${uuidv4()}`;
-  quill.root.innerHTML = value;
 
   onMount(() => {
-    if (quill && value == "") clearEditorText();
-
     if (media) {
       mediaList = ["image", "video"];
     }
