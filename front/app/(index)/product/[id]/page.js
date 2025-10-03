@@ -1,7 +1,8 @@
 import "./style.css";
-import Item from "../../../../components/product/item/item";
 import api from "../../../../middleware/api"
 import { notFound } from "next/navigation";
+import Slide from "../../../../components/product/item/slide";
+import ItemData from "../../../../components/product/item/itemdata";
 
 export const metadata = {
   title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
@@ -11,14 +12,14 @@ export const metadata = {
 
 export default async function page({ params }) {
   try {
-    const {data} = await api.get(`/product/${params.id}`)
-
+    const { data } = await api.get(`/product/${params.id}`)
+    if (data.variant) { data.size = null }
     return (
       <div className={`p-4 mt-5 product`}>
-        <Item data={data} />
-        <div className="py-4">
-          {/* <ProductSlide /> */}
-        </div>
+        <div className="flex gap-12 ">
+          <Slide mainFile={data.mainFile} files={data.files} />
+          <ItemData data={data} />
+        </div >
       </div>
     );
   } catch (err) {

@@ -7,6 +7,7 @@ import "./home.css";
 import api from "../../middleware/api";
 import { useState, useEffect } from "react"
 import DOMPurify from "dompurify";
+import { CircularProgress } from "@mui/material";
 
 export default function Home() {
   const { ref, inView } = useInView({
@@ -79,6 +80,6 @@ export default function Home() {
 
         </section>
       </section>
-    </> : "loading"}</>
+    </> :<div><CircularProgress size="30px" /></div> }</>
   );
 }

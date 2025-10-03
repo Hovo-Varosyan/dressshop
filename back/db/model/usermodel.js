@@ -7,7 +7,7 @@ const schema = new Schema({
     userData: {
         name: { type: String, required: true, minLength: 2, maxLength: 60, default: () => `user${uuidv4()}` },
         lastName: { type: String, minLength: 2, maxLength: 60, default: () => `user${uuidv4()}` },
-        tel: { type: String },
+        tel: { type: String, unique:true, sparse:true },
         email: { type: String, unique: true, required: true },
         city: String,
         street: String,
@@ -16,9 +16,9 @@ const schema = new Schema({
         gender: { type: String, enum: ['male', 'female'], required: true },
         date: {
             type: Date,
-            // validate: { validator: ageValidate, message: "AGE VALIDATION ERROR" }
         }
     },
+    cart:[String],
     order: [String],
     favorite: [String],
     registrationDate: { type: Date, default: Date.now },

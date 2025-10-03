@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import clsx from "clsx/lite";
 import { Button } from "@mui/material";
@@ -5,50 +6,49 @@ import Size from "../../size";
 import Favorite from "../favorite";
 import DOMPurify from "dompurify";
 import { useState } from "react";
+import CartButton from "./cartButton";
 
-export default function ItemData({
-  material,
-  title,
-  descript,
-  price,
-  _id,
-  variant,
-  productSize
-}) {
+export default function ItemData({ data }) {
+  const { material,
+    title,
+    description,
+    price,
+    _id,
+    variant,
+    size: productSize } = data
   const [size, setSize] = useState(productSize || variant[0].size);
   const { promition, total, value } = price;
-  const description = DOMPurify.sanitize(descript);
-
+  const sanitilizeDesc = DOMPurify.sanitize(description.en);
 
   return (
     <section className="w-[50%]">
       <div>
         <div>
-          <h2 className="text-3xl pb-3">{title}</h2>
+          <h2 className="text-3xl pb-3">{title.en}</h2>
           <div
             className="py-5"
-            dangerouslySetInnerHTML={{ __html: description }}
+            dangerouslySetInnerHTML={{ __html: sanitilizeDesc }}
           ></div>
           <div className="material flex flex-wrap gap-3">
             <b className="pr-1 content-center text-gray-300">Material:</b>
-            {material.map((e) => (
+            {material.en.split(",").map((e) => (
               <span key={e} className="p-2 bg-white text-black">
                 {e}
               </span>
             ))}
           </div>
           <div className="flex gap-3 flex-wrap mt-8">
-            {variant.map(({ file, title, size }) => (
+            {variant?.map(({ file, title, size }) => (
               <div
                 className="p-2 cursor-pointer border-[3px] border-[gray] w-[100px]"
                 onClick={() => setSize(size)}
-                key={title}
+                key={title.en}
               >
                 <Image
                   alt="product variant"
                   width={100}
                   height={150}
-                  title={title}
+                  title={title.en}
                   src={"http://localhost:4000" + "/productImg/" + file}
                 />
               </div>
@@ -64,7 +64,6 @@ export default function ItemData({
             </span>
             {promition && (
               <>
-                {" "}
                 <sup className="ml-1 line-through">{value} &#x058F;</sup>{" "}
                 <span className="ml-3 text-sell-red">-{promition}%</span>
               </>
@@ -74,9 +73,7 @@ export default function ItemData({
         <div className=" mt-4 flex items-center   flex-col gap-3">
           <Button className="!bg-btn-red w-2/4 !text-white">Buy</Button>
           <div className="flex gap-3 w-2/4">
-            <Button className="!bg-btn-red flex-grow w-2/4 !text-white">
-              Add to card
-            </Button>
+            <CartButton id={_id}/>
             <div className="item--favorite">
               <Favorite id={_id} />
             </div>
