@@ -1,7 +1,6 @@
 import Image from "next/image";
-import BuyForm from "../../product/item/buyform";
 
-export default function Card() {
+export default function ShopHistory() {
   return [...Array(25)].map((_, i) => {
     return (
       <article className="p-3 flex gap-3" key={i}>

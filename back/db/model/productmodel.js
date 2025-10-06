@@ -3,7 +3,8 @@ const { Schema, model, Types } = require("mongoose");
 const priceSchema = new Schema({
     value: { type: Number, required: true },
     promition: { type: Number, required: true },
-    total: { type: Number, required: true }
+    total: { type: Number, required: true },
+    _id: false
 
 });
 

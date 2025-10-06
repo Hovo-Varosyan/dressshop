@@ -11,7 +11,6 @@ import userStore from "../../store/userStore";
 export default function Favorite({ id }) {
     const favoriteList = userStore()?.profileData?.favorite ?? [];
     const [favorite, setFavorite] = useState(false);
-
     useEffect(() => {
         setFavorite(favoriteList.includes(id));
     }, [favoriteList]);
@@ -19,21 +18,30 @@ export default function Favorite({ id }) {
     const [loading, setLoading] = useState(false);
     const isAuth = useAuth();
     const router = useRouter();
+    
     function handleSubmit(e) {
+        if (!isAuth) {
+            router.push("/login");
+            return;
+        }
         e.preventDefault();
         e.stopPropagation();
-
+        console.log("clicked");
         setLoading(true);
         favorite ? api
             .delete(`/user/product/favorite/${id}`)
             .then((e) => {
+                userStore.getState().removeFavorite(id);
                 setFavorite(false);
+
             })
             .catch((err) => console.log(err))
-            .finally(() => setLoading(false)) : api
+            .finally(() => setLoading(false)) :
+            api
                 .post("/user/product/favorite", { id })
                 .then((e) => {
                     setFavorite(true);
+                    userStore.getState().addFavorite(id);
                 })
                 .catch((err) => console.log(err))
                 .finally(() => setLoading(false));
@@ -47,10 +55,7 @@ export default function Favorite({ id }) {
                     backgroundColor: "#0000001a",
                 },
             }}
-            onClick={
-                isAuth
-                    ? handleSubmit : () => router.push("/login")
-            }
+            onClick={handleSubmit}
             aria-label="favorite-change"
             size="large"
             disabled={loading}

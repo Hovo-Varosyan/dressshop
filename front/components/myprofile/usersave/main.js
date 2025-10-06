@@ -1,20 +1,23 @@
 "use client";
-import Card from "./shophistory";
-import Favorite from "./favorite";
-import Sntings from "./sentings";
 import { Tab, Tabs } from "@mui/material";
 import "../../../assets/style/product.css";
-import Order from "./orders";
 import { useQueryState } from "nuqs";
 import { useRouter } from "next/navigation";
 import parseQueryNumber from "../../../middleware/validate/queryisnumber";
+import dynamic from "next/dynamic";
+
+const ShopHistory = dynamic(() => import("./shophistory"));
+const Favorite = dynamic(() => import("./favorite"));
+const Settings = dynamic(() => import("./sentings"));
+const Cart = dynamic(() => import("./cart"));
 
 const menuValue = {
-    0: () => <Card />,
-    1: () => <Order />,
-    2: () => <Favorite />,
-    3: () => <Sntings />,
+  0: <ShopHistory />,
+  1: <Cart />,
+  2: <Favorite />,
+  3: <Settings />,
 };
+
 
 export default function UserSave() {
     const router = useRouter();
@@ -32,7 +35,7 @@ export default function UserSave() {
                 <hr />
                 <Tabs value={query} onChange={handleChanges}>
                     <Tab
-                        label="zakazi"
+                        label="history"
                         className="border-r-2 text-white border-gray-400 border-solid"
                     />
                     <Tab
@@ -47,7 +50,7 @@ export default function UserSave() {
                 </Tabs>
                 <hr />
             </div>
-            <div>{menuValue[query]()}</div>
+            <div>{menuValue[query]}</div>
         </section>
     );
 }

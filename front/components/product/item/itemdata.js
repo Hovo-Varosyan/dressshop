@@ -49,7 +49,7 @@ export default function ItemData({ data }) {
                   width={100}
                   height={150}
                   title={title.en}
-                  src={"http://localhost:4000" + "/productImg/" + file}
+                  src={"http://localhost:4000" + "/productImg/" + file.name}
                 />
               </div>
             ))}
@@ -72,11 +72,9 @@ export default function ItemData({ data }) {
         </div>
         <div className=" mt-4 flex items-center   flex-col gap-3">
           <Button className="!bg-btn-red w-2/4 !text-white">Buy</Button>
-          <div className="flex gap-3 w-2/4">
+          <div className="flex gap-3 item--buttons justify-between w-2/4">
             <CartButton id={_id}/>
-            <div className="item--favorite">
               <Favorite id={_id} />
-            </div>
           </div>
         </div>
       </div>

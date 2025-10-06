@@ -7,7 +7,7 @@ const schema = new Schema({
     userData: {
         name: { type: String, required: true, minLength: 2, maxLength: 60, default: () => `user${uuidv4()}` },
         lastName: { type: String, minLength: 2, maxLength: 60, default: () => `user${uuidv4()}` },
-        tel: { type: String, unique:true, sparse:true },
+        tel: { type: String, unique: true, sparse: true },
         email: { type: String, unique: true, required: true },
         city: String,
         street: String,
@@ -18,9 +18,9 @@ const schema = new Schema({
             type: Date,
         }
     },
-    cart:[String],
+    cart: { type: [Schema.Types.ObjectId], ref: "product" },
     order: [String],
-    favorite: [String],
+    favorite: { type: [Schema.Types.ObjectId], ref: "product" },
     registrationDate: { type: Date, default: Date.now },
     wallet: Number,
     password: { type: String, required: true },

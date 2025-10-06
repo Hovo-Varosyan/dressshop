@@ -1,5 +1,4 @@
 "use client";
-import UserAnalitics from "../../../components/myprofile/userAnalitics";
 import UserSave from "../../../components/myprofile/usersave/main";
 import userStore from "../../../store/userStore";
 import "./style.css";
@@ -9,9 +8,7 @@ export default function Page() {
 
   return (
     <section className="user-profile p-3">
-
-      {profileData && <> <UserAnalitics />
-        <UserSave /></>}
+      {profileData && <UserSave />}
     </section>
   );
 }

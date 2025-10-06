@@ -5,7 +5,7 @@ import Favorite from './favorite'
 export default function ProductHeader({ data }) {
     const { mainFile, hoverFile, _id, title } = data
     const [image, setImage] = useState(mainFile)
-  
+    
     return (
         <>
 

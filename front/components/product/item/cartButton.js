@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../../app/(index)/provider";
 import api from "../../../middleware/api";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import RemoveShoppingCartOutlinedIcon from '@mui/icons-material/RemoveShoppingCartOutlined';
 
 export default function CartButton({ id }) {
     const cart = userStore()?.profileData?.cart ?? []
@@ -32,8 +34,15 @@ export default function CartButton({ id }) {
 
     }
     return (
-        <Button onClick={isAuth ? handleSubmit : () => router.push("/login")} disabled={loading} className="!bg-btn-red flex-grow w-2/4 !text-white">
-            {cartStatus ? "Delete " : "Add "}to card
-        </Button>)
+        <Button sx={{
+            color: "red",
+            "&:hover": {
+                backgroundColor: "#0000001a",
+            },
+        }} onClick={isAuth ? handleSubmit : () => router.push("/login")} disabled={loading} >
+            {cartStatus ? <ShoppingCartOutlinedIcon /> : <RemoveShoppingCartOutlinedIcon />}
+        </Button>
+    )
+
 
 }

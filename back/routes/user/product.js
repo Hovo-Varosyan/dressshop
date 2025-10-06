@@ -1,9 +1,12 @@
 const router = require("express").Router()
 const Product = require("../../controller/user/product");
-
-router.post("/favorite", Product.addFavorite)
+router.route("/favorite")
+    .get(Product.getAllProduct)
+    .post(Product.addFavorite);
 router.delete("/favorite/:id", Product.removeFavorite)
-router.post("/cart", Product.addCart)
+router.route("/cart") 
+.post(Product.addCart)
+.get(Product.getAllCart);
 router.delete("/cart/:id", Product.removeCart)
 
 module.exports = router

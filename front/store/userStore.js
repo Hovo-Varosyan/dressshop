@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 const userStore = create((set) => ({
     profileData: null,
+    deleteFavoriteId: null,
     setUserData: (data) => {
         set({ profileData: data });
     },
@@ -16,6 +17,23 @@ const userStore = create((set) => ({
             }
         }));
     },
+    addFavorite: (id) => {
+        set((state) => ({
+            profileData: {
+                ...state.profileData,
+                favorite: [...state.profileData.favorite, id]
+            }
+        }));
+    },
+    removeFavorite: (id) => {
+        set((state) => ({
+            profileData: {
+                ...state.profileData,
+                favorite: state.profileData.favorite.filter(favId => favId !== id)
+            },
+            deleteFavoriteId: id
+        }));
+    }
 }));
 
 export default userStore;

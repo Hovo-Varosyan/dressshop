@@ -23,7 +23,6 @@ export default function Mainmenu() {
           LALAMBADA
         </h2>
         <div className="flex gap-3 items-end ">
-          <div className="cursor-pointer hidden md:inline">  <ShoppingBag /></div>
           <div className="hidden md:inline"><ProfileBtn /></div>
           <button
             className=" flex md:hidden mr-4 flex-col gap-2 cursor-pointer"

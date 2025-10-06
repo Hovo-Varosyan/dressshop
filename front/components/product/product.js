@@ -1,13 +1,11 @@
 "use client";
 import ProductHeader from "./productHeader";
-import { useRouter } from "next/navigation";
 
 export default function Product({ data }) {
-  const router = useRouter()
   const { value, promition, total } = data.price
-  console.log(data)
+
   return (
-    <div className="relative bg-black cursor-pointer  flex flex-col justify-between " onClick={() => { router.push(`/product/${data._id}`) }}>
+    <div className="relative bg-gray-900 cursor-pointer  flex flex-col justify-between " onClick={() => { window.open(`/product/${data._id}`, "_blank") }}>
       <ProductHeader data={data} />
 
       <div className="p-2  w-full">
