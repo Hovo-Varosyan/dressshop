@@ -4,7 +4,6 @@ import Link from "next/link";
 import "../../assets/style/mainmenu.css";
 import { Orbitron } from "next/font/google";
 import clsx from "clsx/lite";
-import ShoppingBag from "../ui/shoppingbag";
 import ProfileBtn from "../ui/profileBtn";
 import { useState } from "react";
 
@@ -75,8 +74,7 @@ export default function Mainmenu() {
               <Link href="/delivery">delivery</Link>
             </li>
             <li className={"md:hidden hover:scale-110"}>
-              <div className="flex align-bottom"><span className="mt-[5px]">My Profile</span><ProfileBtn /></div>
-
+             <ProfileBtn text={true}/>
             </li>
           </ul>
         </nav>

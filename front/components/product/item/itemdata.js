@@ -19,7 +19,7 @@ export default function ItemData({ data }) {
   const [size, setSize] = useState(productSize || variant[0].size);
   const { promition, total, value } = price;
   const sanitilizeDesc = DOMPurify.sanitize(description.en);
-
+      console.log("itemdata")
   return (
     <section className="w-[50%]">
       <div>
@@ -62,7 +62,7 @@ export default function ItemData({ data }) {
             <span className={clsx(promition && "text-sell-red")}>
               {total} &#x058F;
             </span>
-            {promition && (
+            {!!promition && (
               <>
                 <sup className="ml-1 line-through">{value} &#x058F;</sup>{" "}
                 <span className="ml-3 text-sell-red">-{promition}%</span>

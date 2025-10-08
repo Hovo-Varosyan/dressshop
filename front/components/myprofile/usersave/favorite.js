@@ -2,7 +2,7 @@
 import { CircularProgress } from "@mui/material";
 import api from "../../../middleware/api";
 import Product from "../../product/product";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import userStore from "../../../store/userStore";
 import Empty from "../../ui/empty";
 
@@ -23,6 +23,7 @@ export default function Favorite() {
   useEffect(() => {
     if (!deleteFavoriteId) return;
     setData(prevData => prevData.filter(item => item._id !== deleteFavoriteId));
+    userStore.getState().deleteFavoriteReset();
   }, [deleteFavoriteId]);
 
   if (loading) {
