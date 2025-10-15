@@ -3,32 +3,26 @@ import { useState, useEffect } from "react";
 import { CircularProgress, Button, IconButton, MenuItem, Select, FormControl } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 import Empty from "../../ui/empty";
-import api from "../../../middleware/api";
 import CartButton from "../../product/item/cartButton";
 import userStore from "../../../store/userStore";
+import { getCartList } from "../../../middleware/request/cart";
 
 export default function Cart() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const deleteCartId = userStore(state => state.deleteCartId)
+  
   useEffect(() => {
     if (!deleteCartId) return;
     setData(prev => prev.filter(item => item._id !== deleteCartId))
     userStore.getState().deleteCartReset()
 
   }, [deleteCartId])
-  console.log(data)
+
   useEffect(() => {
-    api.get("/user/product/cart")
-      .then((res) => {
-        setData(res.data.cart.map((item) => ({ ...item, selectSize: "", selectVariant: "", count: 1 })));
-      })
-      .catch(console.log)
-      .finally(() => setLoading(false));
+    setLoading(true)
+    getCartList({ setData, setLoading })
   }, []);
-
-
-
 
   if (loading)
     return (

@@ -6,11 +6,11 @@ import api from "../../middleware/api";
 import { useAuth } from "./provider";
 
 export default function UserDataFetching() {
-    const isAuth=useAuth();
+    const isAuth = useAuth();
     const { setUserData } = userStore();
     const { data } = useQuery({
         queryKey: ["userProfile"],
-        queryFn: () => api.get("/user").then((res) => res.data),
+        queryFn: () => api.get("/user").then((res) =>{ res.data, console.log("user data", res.data); return res.data}),
         staleTime: 50 * 60 * 1000,
         enabled: isAuth
     });

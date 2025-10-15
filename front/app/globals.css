@@ -150,3 +150,23 @@ option {
 option:nth-child(1) {
   background-color: rgb(186, 186, 186);
 }
+
+.transform-preserve {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.perspective {
+  perspective: 1200px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.transition-ease {
+  transition-timing-function: ease;
+}

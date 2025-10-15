@@ -21,7 +21,7 @@ const userStore = create((set) => ({
         }));
     },
     addFavorite: (id) => {
-console.log("addfavorite")
+        console.log("addfavorite")
         set((state) => ({
             profileData: {
                 ...state.profileData,
@@ -39,7 +39,7 @@ console.log("addfavorite")
             deleteFavoriteId: id
         }));
     },
-    cartAdd:(id)=>{
+    cartAdd: (id) => {
         console.log("cartadd")
         set((state) => ({
             profileData: {
@@ -48,12 +48,14 @@ console.log("addfavorite")
             }
         }));
     },
-    cartRemove:(id)=>{
+    cartRemove: (id) => {
         console.log("cartremove")
-        set((state) => ({profileData: {
+        set((state) => ({
+            profileData: {
                 ...state.profileData,
                 cart: state.profileData.cart.filter(cartId => cartId !== id)
-            },deleteCartId: id}));
+            }, deleteCartId: id
+        }));
     },
     deleteFavoriteReset: () => set({ deleteFavoriteId: null }),
     deleteCartReset: () => set({ deleteCartId: null }),

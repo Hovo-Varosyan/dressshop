@@ -7,6 +7,7 @@ import Favorite from "../favorite";
 import DOMPurify from "dompurify";
 import { useState } from "react";
 import CartButton from "./cartButton";
+import Order from "../../order/order";
 
 export default function ItemData({ data }) {
   const { material,
@@ -17,6 +18,7 @@ export default function ItemData({ data }) {
     variant,
     size: productSize } = data
   const [size, setSize] = useState(productSize || variant[0].size);
+  const [open, setOpen] = useState(false);
   const { promition, total, value } = price;
   const sanitilizeDesc = DOMPurify.sanitize(description.en);
       console.log("itemdata")
@@ -71,7 +73,8 @@ export default function ItemData({ data }) {
           </p>
         </div>
         <div className=" mt-4 flex items-center   flex-col gap-3">
-          <Button className="!bg-btn-red w-2/4 !text-white">Buy</Button>
+          <Button className="!bg-btn-red w-2/4 !text-white" onClick={()=>setOpen(true)}>Buy</Button>
+            <Order open={open} onClose={()=>setOpen(false)} total={total}/>
           <div className="flex gap-3 item--buttons justify-between w-2/4">
             <CartButton id={_id}/>
               <Favorite id={_id} />

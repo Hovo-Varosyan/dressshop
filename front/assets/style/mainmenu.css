@@ -17,6 +17,7 @@
   }
 
   .product-list ul {
+    background:rgb(71 69 69 / 20%);
     li {
       margin: 0.25rem 1rem;
     }

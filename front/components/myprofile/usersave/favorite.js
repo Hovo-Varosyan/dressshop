@@ -1,10 +1,10 @@
 "use client"
 import { CircularProgress } from "@mui/material";
-import api from "../../../middleware/api";
 import Product from "../../product/product";
 import { useState, useEffect, use } from "react";
 import userStore from "../../../store/userStore";
 import Empty from "../../ui/empty";
+import { getFavoriteList } from "../../../middleware/request/favorite";
 
 export default function Favorite() {
   const [data, setData] = useState([]);
@@ -14,10 +14,7 @@ export default function Favorite() {
 
   useEffect(() => {
     setLoading(true);
-    api.get("user/product/favorite")
-      .then(res => setData(res.data.favorite))
-      .catch(console.log)
-      .finally(() => setLoading(false));
+    getFavoriteList({ setData, setLoading });
   }, []);
 
   useEffect(() => {
